@@ -6,6 +6,7 @@ Meet **Siggy** — the sarcastic, cryptic, and completely unhinged mascot of Rit
 
 ![Siggy Avatar](static/avatar.webp)
 
+
 ## ✨ Features
 * **Real-time Streaming**: Token-by-token response streaming using Server-Sent Events (SSE) for that instant ChatGPT/Gemini feel.
 * **Groq Powered**: Uses `llama-3.3-70b-versatile` on Groq's LPU inference engine for ridiculously fast response times.
