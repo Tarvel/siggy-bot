@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content">
     <title>Siggy | The Ritual Bot</title>
     <meta name="description" content="Chat with Siggy, the mystical multi-dimensional cat mascot of Ritual. Sarcastic, cryptic, and completely unhinged.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,13 +36,12 @@
         }
 
         html, body {
-            height: 100%;
+            height: 100dvh;
+            margin: 0;
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background: var(--bg-deep);
             color: var(--text-primary);
             overflow: hidden;
-            position: fixed;
-            width: 100%;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -50,16 +49,10 @@
         .app {
             display: flex;
             flex-direction: column;
-            height: 100vh;
             height: 100dvh;
             max-width: 860px;
             margin: 0 auto;
             overflow: hidden;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
         }
 
         @media (min-width: 861px) {
@@ -343,7 +336,7 @@
             border: none;
             outline: none;
             color: var(--text-primary);
-            font-size: 0.95rem;
+            font-size: 16px; /* 16px prevents iOS Safari from auto-zooming */
             font-family: 'Inter', system-ui, sans-serif;
             padding: 10px 0;
         }
@@ -632,21 +625,6 @@
             }
         });
 
-        // ─── Mobile keyboard fix ───
-        if (window.visualViewport) {
-            const appEl = document.querySelector('.app');
-            function onViewportResize() {
-                const vh = window.visualViewport.height;
-                const offsetTop = window.visualViewport.offsetTop;
-                appEl.style.height = vh + 'px';
-                appEl.style.top = offsetTop + 'px';
-                // Force scroll page back to top (prevents body drift)
-                window.scrollTo(0, 0);
-                scrollToBottom();
-            }
-            window.visualViewport.addEventListener('resize', onViewportResize);
-            window.visualViewport.addEventListener('scroll', onViewportResize);
-        }
 
         // Scroll to bottom when input is focused (mobile keyboard opening)
         msgInput.addEventListener('focus', () => {
