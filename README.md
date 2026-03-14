@@ -4,7 +4,7 @@ A blazing-fast, real-time streaming chatbot built with Flask, Groq (Llama 3.3 70
 
 Meet **Siggy** — the sarcastic, cryptic, and completely unhinged mascot of Ritual who despises centralized AI.
 
-![Siggy Avatar](static/avatar.webp)
+![Siggy Avatar](static/_avatar.webp)
 
 
 ## Features
