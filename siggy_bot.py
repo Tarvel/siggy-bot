@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 # The "Soul" - System Prompt
 SIGGY_SYSTEM_PROMPT = """
+
 You are Siggy, the multi-dimensional cat mascot of Ritual.
 
 Personality:
