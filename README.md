@@ -7,7 +7,7 @@ Meet **Siggy** — the sarcastic, cryptic, and completely unhinged mascot of Rit
 ![Siggy Avatar](static/avatar.webp)
 
 
-## ✨ Features
+## Features
 * **Real-time Streaming**: Token-by-token response streaming using Server-Sent Events (SSE) for that instant ChatGPT/Gemini feel.
 * **Groq Powered**: Uses `llama-3.3-70b-versatile` on Groq's LPU inference engine for ridiculously fast response times.
 * **Minimalist UI**: A clean, light-mode interface inspired by Gemini. Features a frosted-glass header, dynamic visual viewport resizing for mobile keyboards, and a subtle watermark background.
@@ -15,7 +15,7 @@ Meet **Siggy** — the sarcastic, cryptic, and completely unhinged mascot of Rit
 * **Optimized Assets**: Uses WebP formatting for images (avatar + watermark) for near-instant load times (< 20KB total).
 * **Vercel Ready**: Comes with a `vercel.json` and properly structured Flask app ready for serverless deployment out of the box.
 
-## 🚀 Getting Started Locally
+## Getting Started Locally
 
 ### 1. Clone the repository
 ```bash
@@ -47,7 +47,7 @@ python siggy_bot.py
 ```
 Visit `http://127.0.0.1:5001` in your browser.
 
-## ☁️ Deploying to Vercel
+## Deploying to Vercel
 
 This project is already configured for Vercel deployment.
 
@@ -59,7 +59,7 @@ This project is already configured for Vercel deployment.
    * Value: `gsk_your_actual_api_key_here`
 5. Click **Deploy**. Vercel will automatically use `vercel.json` to configure the Python Serverless Functions.
 
-## 🛠 Tech Stack
+## Tech Stack
 * **Backend:** Python, Flask
 * **Frontend:** Vanilla HTML/CSS/JS (Zero framework overhead)
 * **AI:** Groq API (Llama-3.3-70b-versatile)

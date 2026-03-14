@@ -418,13 +418,44 @@
             transition: opacity 0.5s ease, visibility 0.5s ease;
         }
 
-        #splash-screen img {
+        .splash-images {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .splash-images .main-logo {
             width: 280px;
-            max-width: 80%;
+            max-width: 80vw;
             border-radius: var(--radius);
             box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-            margin-bottom: 40px;
+            position: relative;
+            z-index: 5;
             animation: float 4s ease-in-out infinite;
+        }
+
+        .splash-images .orbit-img {
+            position: absolute;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            opacity: 0;
+            z-index: 6; /* Higher than main-logo (5) to appear in front */
+            animation: orbitFadeIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            background: var(--bg-deep); /* Prevents transparency issues */
+        }
+
+        .img-1 { top: -35px; left: -45px; animation-delay: 0.4s; }
+        .img-2 { top: 60px; right: -55px; animation-delay: 0.9s; }
+        .img-3 { bottom: -30px; left: 10px; animation-delay: 1.4s; }
+
+        @keyframes orbitFadeIn {
+            0% { opacity: 0; transform: scale(0.5) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         .splash-spinner {
@@ -451,17 +482,26 @@
             .chat-area { padding: 18px 16px; }
             .input-area { padding: 10px 16px 16px; }
             .msg-row { max-width: 90%; }
-            .welcome-_avatar { width: 80px; height: 80px; }
+            .welcome-avatar { width: 80px; height: 80px; }
             .welcome h2 { font-size: 1.2rem; }
             .chat-area::before { width: 240px; height: 240px; }
-            #splash-screen img { width: 220px; }
+            .splash-images .main-logo { width: 220px; }
+            .splash-images .orbit-img { width: 75px; height: 75px; }
+            .img-1 { left: -30px; top: -25px; }
+            .img-2 { right: -35px; top: 40px; }
+            .img-3 { left: 0px; bottom: -20px; }
         }
     </style>
 </head>
 <body>
     <!-- Splash Screen -->
     <div id="splash-screen">
-        <img src="/static/_loadpage.webp" alt="Loading Siggy...">
+        <div class="splash-images">
+            <img src="/static/loadpage.webp" alt="Loading Siggy..." class="main-logo">
+            <img src="/static/l1.webp" class="orbit-img img-1" alt="">
+            <img src="/static/l2.webp" class="orbit-img img-2" alt="">
+            <img src="/static/l3.webp" class="orbit-img img-3" alt="">
+        </div>
         <div class="splash-spinner"></div>
     </div>
 
@@ -681,7 +721,7 @@
                     splash.style.visibility = 'hidden';
                     setTimeout(() => splash.remove(), 500); // Remove from DOM after fade
                 }
-            }, 2000); // Wait 2 seconds before fading out
+            }, 3500); // Wait 3.5 seconds before fading out
         });
 
 
