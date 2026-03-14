@@ -43,7 +43,6 @@
             overflow: hidden;
             position: fixed;
             width: 100%;
-            touch-action: none;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -126,6 +125,8 @@
         .chat-area {
             flex: 1;
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-y: contain;
             padding: 28px 24px;
             display: flex;
             flex-direction: column;
@@ -646,13 +647,6 @@
             window.visualViewport.addEventListener('resize', onViewportResize);
             window.visualViewport.addEventListener('scroll', onViewportResize);
         }
-
-        // Block body scroll on touch devices, only allow chat-area to scroll
-        document.body.addEventListener('touchmove', function(e) {
-            if (!e.target.closest('.chat-area')) {
-                e.preventDefault();
-            }
-        }, { passive: false });
 
         // Scroll to bottom when input is focused (mobile keyboard opening)
         msgInput.addEventListener('focus', () => {
