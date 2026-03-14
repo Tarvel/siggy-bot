@@ -1,4 +1,4 @@
-# Siggy The Multi-Dimensional Cat 🐈‍⬛✨
+# Siggy The Multi-Dimensional Cat
 
 A blazing-fast, real-time streaming chatbot built with Flask, Groq (Llama 3.3 70B), and a sleek, Gemini-inspired minimalist UI.
 
